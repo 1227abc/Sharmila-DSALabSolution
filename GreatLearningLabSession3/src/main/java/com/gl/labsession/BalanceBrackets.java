@@ -1,14 +1,12 @@
 package com.gl.labsession;
 
-import java.util.Scanner;
 import java.util.Stack;
 
 public class BalanceBrackets {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		String bracketExpression = "([[{}]]) ()";
+		String bracketExpression = "([[{}]])";
 
 		if (isBalanced(bracketExpression)) {
 			System.out.println("Balanced Brackets");
@@ -22,13 +20,10 @@ public class BalanceBrackets {
 
 		Stack<Character> stack = new Stack<Character>();
 
-		// iterate through the characters
 		for (int i = 0; i < bracketExpression.length(); i++) {
 
-			// check if c is '(' '{' '['
 			char character = bracketExpression.charAt(i);
 
-			// push to stack
 			if (character == '(' || character == '[' || character == '{') {
 				stack.push(character);
 				continue;
@@ -38,7 +33,7 @@ public class BalanceBrackets {
 				return false;
 			}
 			char c;
-			// pop from the stack c= ( )
+
 			switch (character) {
 
 			case '}':
@@ -58,7 +53,6 @@ public class BalanceBrackets {
 				if (c == '(' || c == '{')
 					return false;
 				break;
-			
 
 			}
 		}
